@@ -5,16 +5,21 @@ export const GET: APIRoute = async () => {
     const response = await fetch("https://criptoya.com/api/btc/ars");
     const data = await response.json();
 
-    // Calculate average rate excluding outliers
-    const rates = Object.entries(data)
-      .filter(([key]) => !["time"].includes(key))
-      .map(([_, values]: [string, any]) => values.ask);
+    // Filter out the time field and transform data
+    const exchanges = Object.entries(data)
+      .filter(([key]) => key !== "time")
+      .map(([exchange, values]: [string, any]) => ({
+        exchange,
+        price: values.ask,
+      }));
 
-    const avgRate = rates.reduce((a, b) => a + b, 0) / rates.length;
+    const avgRate =
+      exchanges.reduce((a, b) => a + b.price, 0) / exchanges.length;
 
     return new Response(
       JSON.stringify({
         rate: avgRate,
+        exchanges,
         time: new Date().getTime(),
         satsPerPeso: (100000000 / avgRate).toFixed(2),
       }),
