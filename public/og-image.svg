@@ -1,0 +1,36 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#fff7ed"/>
+  <rect width="1200" height="630" fill="url(#gradient)" fill-opacity="0.1"/>
+  
+  <!-- Logo and Text Container -->
+  <g transform="translate(150, 165)">
+    <!-- Bitcoin Symbol -->
+    <circle cx="60" cy="180" r="150" fill="#f59e0b"/>
+    <path fill="white" fill-rule="nonzero" d="M147.77 154.38c4.072,-27.226 -16.656,-41.861 -45,-51.624l9.195 -36.88 -22.45 -5.594 -8.951 35.909c-5.902,-1.472 -11.963,-2.859 -17.987,-4.234l9.016 -36.146 -22.436 -5.594 -9.2 36.868c-4.884,-1.112 -9.681,-2.211 -14.335,-3.369l0.026 -0.116 -30.959 -7.731 -5.972 23.978c0,0 16.656,3.818 16.305,4.053 9.091,2.269 10.735,8.287 10.462,13.057l-10.474 42.015c0.626,0.159 1.438,0.389 2.334,0.749 -0.749,-0.186 -1.546,-0.389 -2.373,-0.587l-14.681 58.857c-1.111,2.762 -3.931,6.907 -10.287,5.333 0.225,0.326 -16.317,-4.072 -16.317,-4.072l-11.146 25.698 29.215 7.283c5.435,1.363 10.761,2.789 16.006,4.13l-9.29 37.303 22.424 5.594 9.2 -36.907c6.126,1.663 12.071,3.197 17.891,4.643l-9.169 36.733 22.451 5.594 9.289 -37.233c38.282,7.245 67.067,4.324 79.183,-30.302 9.763,-27.878 -0.486,-43.958 -20.626,-54.444 14.669,-3.383 25.718,-13.031 28.664,-32.961l-0.007 -0.005zm-51.293 71.926c-6.938,27.878 -53.876,12.808 -69.094,9.029l12.328 -49.42c15.217,3.799 64.017,11.317 56.767,40.391zm6.943 -72.33c-6.329,25.358 -45.396,12.475 -58.069,9.316l11.177 -44.821c12.673,3.159 53.485,9.055 46.894,35.505l-0.002 0z"/>
+    
+    <!-- Title -->
+    <text x="250" y="120" font-family="Inter, system-ui, sans-serif" font-size="72" font-weight="700" fill="#1e293b">
+      Satoshito
+    </text>
+    
+    <!-- Subtitle -->
+    <text x="250" y="180" font-family="Inter, system-ui, sans-serif" font-size="32" font-weight="500" fill="#64748b">
+      Convertí pesos a sats al instante
+    </text>
+    
+    <!-- Example Conversion -->
+    <rect x="250" y="220" width="700" height="100" rx="12" fill="white"/>
+    <text x="290" y="285" font-family="Inter, system-ui, sans-serif" font-size="36" font-weight="600" fill="#f59e0b">
+      1 PESO = 1.09 SATS
+    </text>
+  </g>
+  
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="gradient" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+  </defs>
+</svg>
