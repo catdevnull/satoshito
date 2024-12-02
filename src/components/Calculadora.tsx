@@ -65,14 +65,14 @@ export function Calculadora() {
 
   return (
     <div>
-      <div className="max-w-md mx-auto bg-white rounded-xl shadow-lg p-8 mb-8">
-        <div className="space-y-6">
+      <div className="max-w-lg mx-auto bg-white rounded-xl shadow-lg p-8 mb-8 flex flex-col gap-4">
+        <div className="gap-2 md:gap-6 flex flex-col md:flex-row justify-center">
           <div className="relative">
             <input
               type="number"
               value={valor}
               onInput={(e) => setValor(e.currentTarget.value)}
-              className="w-full text-4xl font-bold text-center bg-gray-50 rounded-lg py-4 px-3 focus:ring-2 focus:ring-primary-500 focus:outline-none"
+              className=" text-4xl font-bold text-center bg-gray-50 rounded-lg py-4 px-3 focus:ring-2 focus:ring-primary-500 focus:outline-none w-48"
               min="0"
               disabled={isLoading.value || !!error.value}
             />
@@ -83,37 +83,37 @@ export function Calculadora() {
 
           <button
             onClick={intercambiarModo}
-            className="w-full flex items-center justify-center space-x-2 py-3 text-primary-600 hover:text-primary-700 transition-colors"
+            className="flex items-center justify-center space-x-2 py-3 text-primary-600 hover:text-primary-700 transition-colors"
             disabled={isLoading.value || !!error.value}
           >
             <span className="text-2xl">⇅</span>
           </button>
 
-          <div className="bg-gray-50 rounded-lg p-4">
-            <p className="text-center text-3xl font-bold text-primary-600">
+          <div className="bg-gray-50 rounded-lg p-4 w-48">
+            <p className="text-center text-3xl font-bold text-primary-600 w-full ">
               {calcularConversion()}
               <span className="text-gray-500 ml-2 text-xl">
                 {modo === "peso" ? "SATS" : "PESOS"}
               </span>
             </p>
           </div>
-          <div className="text-center">
-            <p className="text-gray-600 text-sm">Tasa de cambio promedio</p>
-            {isLoading.value ? (
-              <div className="animate-pulse h-8 bg-gray-200 rounded w-48 mx-auto"></div>
-            ) : error.value ? (
-              <p className="text-red-500">{error.value}</p>
-            ) : (
-              <>
-                <p className="text-2xl font-bold text-primary-600">
-                  1 PESO = {rates.value.satsPerPeso} SATS
-                </p>
-                <p className="text-xs text-gray-500 mt-1">
-                  Última actualización: {ultimaActualizacion}
-                </p>
-              </>
-            )}
-          </div>
+        </div>
+        <div className="text-center flex flex-col items-center">
+          <p className="text-gray-600 text-sm">Tasa de cambio promedio</p>
+          {isLoading.value ? (
+            <div className="animate-pulse h-8 bg-gray-200 rounded w-48 mx-auto"></div>
+          ) : error.value ? (
+            <p className="text-red-500">{error.value}</p>
+          ) : (
+            <>
+              <p className="text-2xl font-bold text-primary-600">
+                1 PESO = {rates.value.satsPerPeso} SATS
+              </p>
+              <p className="text-xs text-gray-500 mt-1">
+                Última actualización: {ultimaActualizacion}
+              </p>
+            </>
+          )}
         </div>
       </div>
       {!isLoading.value && !error.value && (
